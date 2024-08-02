@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    dockerimagename = "bravinwasike/react-app"
+    dockerimagename = "srilathapeddi/react-app"
     dockerImage = ""
   }
   agent any
@@ -14,6 +14,7 @@ pipeline {
       steps{
         script {
           dockerImage = docker.build dockerimagename
+          //dockerImage = docker.build(dockerimagename, '-f jenkins_deploy/Dockerfile .')
         }
       }
     }

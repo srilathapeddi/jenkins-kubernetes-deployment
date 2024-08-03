@@ -13,8 +13,8 @@ pipeline {
     stage('Build image') {
       steps{
         script {
-          unset DOCKER_CERT_PATH
-          export DOCKER_TLS_VERIFY=1
+          //unset DOCKER_CERT_PATH
+          //export DOCKER_TLS_VERIFY=1
           dockerImage = docker.build dockerimagename
           //dockerImage = docker.build(dockerimagename, '-f jenkins_deploy/Dockerfile .')
         }

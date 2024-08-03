@@ -13,6 +13,7 @@ pipeline {
     stage('Build image') {
       steps{
         script {
+          unset DOCKER_CERT_PATH
           dockerImage = docker.build dockerimagename
           //dockerImage = docker.build(dockerimagename, '-f jenkins_deploy/Dockerfile .')
         }

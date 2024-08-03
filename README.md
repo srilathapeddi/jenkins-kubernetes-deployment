@@ -1,1 +1,1 @@
-# jenkins-kubernetes-deployment
+# jenkins-kubernetes-deploy

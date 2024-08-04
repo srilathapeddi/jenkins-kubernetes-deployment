@@ -2,6 +2,7 @@ pipeline {
   environment {
     dockerimagename = "srilathapeddi/react-app"
     dockerImage = ""
+    DOCKER_TLS_VERIFY=0
   }
   agent any
   stages {
@@ -14,7 +15,7 @@ pipeline {
       steps{
         script {
           //unset DOCKER_CERT_PATH
-          export DOCKER_TLS_VERIFY=0
+          //export DOCKER_TLS_VERIFY=0
           dockerImage = docker.build dockerimagename
           //dockerImage = docker.build(dockerimagename, '-f jenkins_deploy/Dockerfile .')
         }

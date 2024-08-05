@@ -2,9 +2,12 @@ pipeline {
   environment {
     dockerimagename = "srilathapeddi/react-app"
     dockerImage = ""
-    DOCKER_TLS_CERTDIR=""
+    DOCKER_TLS_CERTDIR="/certs"
     //DOCKER_TLS_VERIFY=0
     //DOCKER_CERT_PATH = "C:/Users/PC/.minikube/certs" // Unset the DOCKER_CERT_PATH to avoid using non-existent certificates
+    DOCKER_HOST="tcp://docker:2376"
+    DOCKER_CERT_PATH="/certs/client"
+    DOCKER_TLS_VERIFY=1
     //DOCKER_TLS_CERTDIR="C:/Users/PC/.minikube/certs"
   }
   agent any

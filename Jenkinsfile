@@ -6,7 +6,7 @@ pipeline {
     DOCKER_CERT_PATH = '' // Unset the DOCKER_CERT_PATH to avoid using non-existent certificates
     DOCKER_TLS_CERTDIR=""
   }
-  agent any
+  agent any { dockerfile true }
   stages {
     stage('Checkout Source') {
       steps {

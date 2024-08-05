@@ -2,8 +2,8 @@ pipeline {
   environment {
     dockerimagename = "srilathapeddi/react-app"
     dockerImage = ""
-    //DOCKER_TLS_VERIFY=0
-    DOCKER_CERT_PATH = 'C:/Program Files/Git/usr/ssl' // Unset the DOCKER_CERT_PATH to avoid using non-existent certificates
+    DOCKER_TLS_VERIFY=0
+    DOCKER_CERT_PATH = '' // Unset the DOCKER_CERT_PATH to avoid using non-existent certificates
   }
   agent any
   stages {
@@ -17,8 +17,8 @@ pipeline {
         script {
           //unset DOCKER_CERT_PATH
           //export DOCKER_TLS_VERIFY=0
-          dockerImage = docker.build dockerimagename
-          //dockerImage = docker.build(dockerimagename, '-f jenkins_deploy/Dockerfile .')
+          //dockerImage = docker.build dockerimagename
+          dockerImage = docker.build(dockerimagename, '-f Dockerfile .')
         }
       }
     }

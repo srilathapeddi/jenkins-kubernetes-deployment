@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    dockerimagename = "srilathapeddi/react-app"
+    dockerimagename = "srilatha7842/react-app"
     dockerImage = ""
     DOCKER_TLS_CERTDIR="/certs"
     //DOCKER_TLS_VERIFY=0

@@ -35,7 +35,7 @@ pipeline {
         script {
           docker.withRegistry('https://registry.hub.docker.com', registryCredential) {
             sh "echo 'Docker login successfull'"
-            dockerImage.push("latest")
+            dockerImage.push("v1")
           }
         }
       }
